@@ -1,2 +1,2 @@
-# this is learnto.net
+# learnto.net
 This is my project
