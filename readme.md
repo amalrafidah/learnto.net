@@ -1,2 +1,2 @@
 # learnto.net
-This is my project
+This is our Final Year Project Application
