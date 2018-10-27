@@ -1,0 +1,7 @@
+{
+  "name": "learntonet",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-navbar color="greenheader">
+    <ion-title>Create Account</ion-title>
+    <ion-buttons left>
+    	<button ion-button icon-only menuToggle>
+    		<ion-icon name="menu"></ion-icon>
+    	</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<form #f="ngForm" (ngSubmit)="onSignup(f)">
+		<ion-list>
+
+			<ion-item>
+			<ion-label fixed> <ion-icon ios="ios-contact" md="md-contact">Full Name</ion-icon></ion-label>
+				<ion-input type="text" [(ngModel)]="Fullname" [ngModelOptions]="{standalone: true}" required></ion-input>
+			</ion-item>
+			<ion-item>
+				<ion-label fixed><ion-icon name="contact"></ion-icon>Username</ion-label>
+				<ion-input type="text" [(ngModel)]="username" [ngModelOptions]="{standalone: true}" required></ion-input>
+			</ion-item>
+			<ion-item>
+				<ion-label fixed> <ion-icon ios="ios-mail" md="md-mail"></ion-icon>Email</ion-label>
+				<ion-input type="email" ngModel name="email" required></ion-input>
+			</ion-item>
+			<!-- <ion-item>
+				<ion-label floating>Password</ion-label>
+				<ion-input type="password" ngModel name="password"  required></ion-input>
+			</ion-item> -->
+			<ion-item>
+				<ion-label fixed><ion-icon ios="ios-lock" md="md-lock"></ion-icon>Password</ion-label>
+				<ion-input type="password" ngModel name="password" [minlength]="8" required></ion-input>
+			</ion-item>	
+			<ion-item>
+				<ion-label fixed><ion-icon ios="ios-lock" md="md-lock">Confirm Password</ion-icon></ion-label>
+				<ion-input type="password" [(ngModel)]="confirmpassword" [ngModelOptions]="{standalone: true}" [minlength]="8" required></ion-input>
+			</ion-item>
+			<ion-item>
+				<ion-label fixed><ion-icon ios="ios-pin" md="md-pin"></ion-icon>Select a Country</ion-label>
+					<ion-select>
+						<ion-option value="br">Brunei</ion-option>
+						<ion-option value="uk">United Kingdom</ion-option>
+					</ion-select>
+			</ion-item>	
+			<ion-item>
+				<ion-label> <ion-icon ios="ios-calendar" md="md-calendar"></ion-icon>Birthday</ion-label>
+ 				<ion-datetime displayFormat="DD/MM/YYYY"></ion-datetime>
+			</ion-item>			
+			<ion-item>
+				<ion-label fixed> <ion-icon ios="ios-briefcase" md="md-briefcase"></ion-icon>Occupation</ion-label>
+					<ion-select>
+						<ion-option value="f">Student</ion-option>
+						<ion-option value="m">Worker</ion-option>
+					</ion-select>
+			</ion-item>	
+
+			
+
+		</ion-list>
+		<button id="proceedbtn" ion-button full type="submit" [disabled]="!f.valid" >PROCEED</button>
+	</form>
+
+	
+</ion-content>

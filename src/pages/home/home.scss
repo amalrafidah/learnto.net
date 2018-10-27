@@ -1,0 +1,176 @@
+page-home {
+ 
+
+.SwipedTabs-indicatorSegment
+    {
+        -webkit-transition: 0.3s all;
+        -moz-transition:  0.3s all;
+        -o-transition:  0.3s all;
+        transition:  0.3s all;
+        transform-origin: top 0 left 0;
+        height: 4px;
+	    position: relative;
+	    background-color: #27ae60 !important;
+    }
+
+    .SwipedTabs-tabs ion-segment-button
+    {
+    	border:none !important;
+    	color:white!important;
+    	background-color:#2ecc71!important;
+
+    }
+     .SwipedTabs-tabs ion-segment-button.SwipedTabs-activeTab
+    {
+        color:white !important;
+        font-weight: bolder !important;
+    }
+    .SwipedTabs-tabs
+    {
+        border: none;
+        height: 40px;
+        margin-bottom: -4px;
+    }
+
+}
+
+#bgcolor {
+    /*background-color: #f9f9f9;*/
+    background-color: #f7f9fc;
+}
+
+.imagedisplay {
+
+}
+
+.tab1 {
+    position: relative;
+    bottom: 24px;
+    border-bottom: thin 1px;
+}
+
+.tab2 {
+    position: relative;
+    border-bottom: thin 1px;
+}
+
+.tab3 {
+    position: relative;
+    border-bottom: thin 1px;
+}
+
+
+.img {
+    position: relative;
+    height: 100%;
+ }
+
+#title1 {
+    font-family: serif;
+    font-size: 16px;
+    position: relative;
+    left: 160px;
+    bottom: 15px;
+
+}
+
+#card1 {
+    height: 150px;
+    box-shadow: 100;
+}
+
+.img1 {
+    position: relative;
+    bottom: 92px;
+    right: 50px;
+    width: 170px;
+}
+
+.autoslider {
+    height: 260px;
+}
+
+ion-slide .img {
+    height: 250px;
+
+   width: 400px;
+   box-shadow:  1px 0 6px 2px #ccc;
+}
+
+
+
+.articleDisplay {
+    width: 340px;
+    height: 170px;
+    font-size: 10px;
+    position: relative;
+    box-shadow:  0 3px 9px 2px #ccc;
+    background-color: #f9f9f9;
+
+}
+
+#txtContent ion-card-content {
+    font-size: 10px; 
+    text-align: justify;
+    width: 150px;
+}
+
+.articleDisplay ion-card-header {
+  font-size: 11px;
+  height: 12px;
+  position: relative;
+  bottom: 5px;
+  padding: none;
+  color: #fbaa37;
+  text-align: left;
+  letter-spacing: 0.4px;
+  font-family: Lato;
+}
+
+.box {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #fbaa37;
+    height: 38px;
+    width: 400px;
+    position:relative;
+    bottom: 6px;
+    right: 10px;
+    background-color: #fff;
+}
+
+.articleImg img {
+    width: 800px;
+    position: relative;
+    right: 9px;
+    bottom: 5px;
+}
+
+.txtDesc {
+    width: 150px;
+    position: relative;
+    right: 14px;
+    bottom: 10px;
+}
+
+#author {
+    margin-top: -4px;
+    text-align: left;
+    font-size: 10px;
+    letter-spacing: 1px;
+    margin-bottom: -10px;
+
+}
+
+.datePub {
+    text-align: right;
+    font-size: 8px;
+
+}
+
+.goalBtn {
+  position: relative;
+  left: 300px;
+  font-size: 13px;
+}
+

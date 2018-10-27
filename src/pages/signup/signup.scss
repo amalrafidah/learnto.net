@@ -1,0 +1,39 @@
+page-signup {
+	ion-content {
+
+		.container{
+			height: 100%;
+		}
+
+		.content {
+		margin: 20px;
+		padding-top: 120px;
+		padding-left: 20px;
+		padding-right: 20px;
+		}
+
+		.btns{
+			margin-top: 50px;
+		}
+
+		h1, p {
+			color: #50c15b;
+			text-align: center;
+		}
+
+		h1{
+			font-size: 400%;
+			font-weight: bold;
+		}
+
+		#googlebtn {
+			background-color: #de4b38;
+
+		}
+
+		#accbtn {
+			background-color: #ffb956;
+		}
+
+	}
+}

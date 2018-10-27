@@ -1,0 +1,43 @@
+<ion-header>
+
+ <ion-navbar color="greenheader">
+    <ion-title>
+    Sign Up
+</ion-title>
+    <ion-buttons left>
+    	<button ion-button icon-only menuToggle>
+    		<ion-icon name="menu"></ion-icon>
+    	</button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <div class="container">
+    <div class="content">
+    <h1>SIGN UP!</h1>
+
+    <p>to gain more knowledge each day.</p>
+
+      <div class="btns">
+        <button id="googlebtn" ion-button icon-start (click)="loginWithGoogle()" *ngIf="!provider.loggedin" block>
+          <ion-icon name="logo-google"></ion-icon>SIGN UP WITH GOOGLE</button>
+        <button id="accbtn" ion-button (click)="onGotoAcc()" block>CREATE A NEW ACCOUNT</button>
+      </div>
+    </div>
+
+    
+    <ion-card *ngIf="provider.loggedin">
+        <img src="{{ provider.profilePicture }}">
+    <ion-card-content>
+      <ion-card-title>
+        {{ provider.name }}
+      </ion-card-title>
+      <p style="text-align: center"> {{ provider.email }}</p>
+    </ion-card-content>
+    </ion-card>
+
+    <button ion-button (click)="logout()" *ngIf="provider.loggedin">Logout</button>
+  </div>
+</ion-content>

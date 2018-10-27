@@ -1,0 +1,36 @@
+page-signin {
+	ion-content{
+
+		.container{
+			height: 100%;
+			background-color: #fafafa;
+		}
+
+		.content{
+			padding-top: 100px;
+
+
+		}
+		.frame{
+			margin: 20px;	
+		}
+
+		p{
+			text-align: center;
+		}
+
+		h1{
+			color: #50c15b;
+			text-align: center;
+			font-size: 300%;
+		}
+
+		#loginbtn {
+			background-color: #feb855;
+		}
+
+		#guestbtn {
+			background-color: #50c15b;
+		}
+	}
+}

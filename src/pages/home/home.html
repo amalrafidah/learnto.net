@@ -1,0 +1,195 @@
+<ion-header>
+  <ion-navbar color="greenheader">
+
+  <!--Menu nav button-->
+  	<ion-buttons left>
+  		<button ion-button icon-only menuToggle>
+  			<ion-icon name="menu"></ion-icon>
+  		</button>
+  	</ion-buttons>
+  <!--TITLE-->
+    <ion-title *ngIf="!isSearchbarOpened">
+      Home
+    </ion-title>
+
+    <!--search button-->
+    <ion-searchbar *ngIf="isSearchbarOpened" showCancelButton="true" (search)="onSearch($event)" (ionInput)="getItems($event)" (ionCancel)="isSearchbaropened=false"></ion-searchbar>
+    <ion-buttons end>
+    <button ion-button icon-only *ngIf="!isSearchbarOpened" (click)="isSearchbarOpened=true">
+    	<ion-icon name="search"></ion-icon>
+    </button>
+</ion-buttons>
+  </ion-navbar>
+
+
+
+<!-- -->
+
+
+   <ion-segment  class="SwipedTabs-tabs"  >
+    <ion-segment-button *ngFor='let tab of tabs ; let i = index ' value="IngoreMe" (click)="selectTab(i)"
+    [ngClass]='{ "SwipedTabs-activeTab" : ( this.SwipedTabsSlider  && ( this.SwipedTabsSlider.getActiveIndex() === i || (  tabs.length -1 === i&& this.SwipedTabsSlider.isEnd()))) }' >
+      {{tab}}
+    </ion-segment-button>
+  </ion-segment>
+
+  <!-- here is our dynamic line  "indicator"-->
+  <div id='indicator' class="SwipedTabs-indicatorSegment" [ngStyle]="{'width.%': (100/this.tabs.length)}"></div>
+
+ 
+
+ 
+</ion-header>
+
+
+
+
+
+
+
+<ion-content id="bgcolor">
+<div overflow-scroll="true">
+   <ion-slides #SwipedTabsSlider  (ionSlideDrag)="animateIndicator($event)"
+              (ionSlideWillChange)="updateIndicatorPosition()"
+              (ionSlideDidChange)="updateIndicatorPosition()"
+              (pan)="updateIndicatorPosition()"
+              [pager]="false"
+        >
+
+
+<!------------- TAB 1 : NEW! ----------> 
+      <ion-slide class="tab1" value="newpg">
+    <div class="autoslider">
+   <ion-slides autoplay="5000" loop="true" speed="3000" >
+  
+     <ion-slide>
+     <img class="img" src="assets/imgs/homepicturedisplay.png">
+    </ion-slide>
+    
+    <ion-slide>
+      <img class="img" src="assets/imgs/fruitsandveggie.png">
+    </ion-slide>
+
+    <ion-slide>
+      <img class="img" src="assets/imgs/Ethicsphoto.jpg">
+    </ion-slide>
+</ion-slides>
+
+</div>
+
+
+<ion-card *ngFor="let file of files | async; let i = index;" class="articleDisplay">
+
+  <ion-grid>
+    <div class="box">
+     <ion-card-header>  
+      <ion-icon class="goalBtn" name="bookmark" ></ion-icon> 
+      {{file.Title}} 
+      </ion-card-header>
+   </div>
+    <ion-row>
+      <ion-col class="articleImg">
+        <img src="https://firebasestorage.googleapis.com/v0/b/learntonet-58a9a.appspot.com/o/displayArticle%2F{{file.Image}}.jpg?alt=media&token=20c2ac2c-c112-4c8e-9839-54c3150746d3">
+      </ion-col>
+
+    <ion-col id="txtContent">
+
+ 
+    <ion-card-content> 
+      <div class="txtDesc">
+        <div id="author"><i>by {{file.Author}}</i> 
+          <div class="datePub">
+            <ion-icon name="time"> {{file.DatePub}} </ion-icon>
+          </div> <br/>
+        </div>
+       {{ file.Description }} <br/> 
+
+     </div> 
+   </ion-card-content>
+
+  </ion-col>
+</ion-row>
+</ion-grid>
+ 
+  </ion-card>
+  </ion-slide>
+
+            <!------------- TAB 2: MOST POPULAR ----------> 
+
+   <ion-slide class="tab2" value="newpg">
+
+<ion-card *ngFor="let popular of popular | async" class="articleDisplay">
+
+  <ion-grid>
+    <div class="box">
+     <ion-card-header> 
+     <ion-icon class="goalBtn" name="bookmark" ></ion-icon>  
+      {{ popular.Title  }} 
+      </ion-card-header>
+   </div>
+    <ion-row>
+      <ion-col class="articleImg">
+        <img src="https://firebasestorage.googleapis.com/v0/b/learntonet-58a9a.appspot.com/o/popularImg%2F{{popular.Image}}.jpg?alt=media&token=20c2ac2c-c112-4c8e-9839-54c3150746d3"></ion-col>
+
+    <ion-col id="txtContent">
+
+ 
+    <ion-card-content> 
+      <div class="txtDesc">
+        <div id="author"><i>by {{popular.Author}}</i> <div class="datePub"><ion-icon name="time"> {{popular.DatePub}} </ion-icon></div> <br/></div>
+       {{ popular.Description }} <br/> 
+
+     </div> </ion-card-content>
+
+  </ion-col>
+</ion-row>
+</ion-grid>
+ 
+  </ion-card>
+  
+</ion-slide>
+
+<!------------- TAB 3: RECOMMENDED ----------> 
+
+
+ <ion-slide class="tab3" value="newpg">
+
+
+<ion-card *ngFor="let recommend of recommended | async" class="articleDisplay">
+
+  <ion-grid>
+    <div class="box">
+     <ion-card-header> 
+      <ion-icon class="goalBtn" name="bookmark"></ion-icon>
+      {{ recommend.Title  }} 
+       </ion-card-header>
+   </div>
+    <ion-row>
+      <ion-col class="articleImg">
+        <img src="https://firebasestorage.googleapis.com/v0/b/learntonet-58a9a.appspot.com/o/recommendImg%2F{{recommend.Image}}.jpg?alt=media&token=20c2ac2c-c112-4c8e-9839-54c3150746d3"></ion-col>
+
+    <ion-col id="txtContent">
+
+ 
+    <ion-card-content> 
+      <div class="txtDesc">
+        <div id="author"><i>by {{recommend.Author}}</i> <div class="datePub"><ion-icon name="time"> {{recommend.DatePub}} </ion-icon></div> <br/></div>
+       {{ recommend.Description }} <br/> 
+
+     </div> </ion-card-content>
+
+  </ion-col>
+</ion-row>
+</ion-grid>
+ 
+  </ion-card>
+
+</ion-slide>
+ 
+
+  </ion-slides>
+
+</div>
+
+
+</ion-content>

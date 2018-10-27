@@ -1,0 +1,41 @@
+<ion-menu [content]="nav">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <button ion-item icon-left (click)="onLoad(rootPage)" *ngIf="isAuthenticated">
+        <ion-icon name="home"></ion-icon>
+        Home
+      </button>
+      <button ion-item icon-left (click)="onLoad(signInPage)" *ngIf="!isAuthenticated">
+        <ion-icon name="log-in"></ion-icon>
+        SignIn
+      </button>
+      <button ion-item icon-left (click)="onLoad(signUpPage)" *ngIf="!isAuthenticated">
+        <ion-icon name="person"></ion-icon>
+        SignUp
+      </button>
+      <button ion-item icon-left (click)="onLoad(aboutPage)" *ngIf="isAuthenticated">
+      <ion-icon name="contacts"></ion-icon>
+        About
+      </button>
+      <button ion-item icon-left (click)="onLoad(skillPage)" *ngIf="isAuthenticated">
+      <ion-icon name="contacts"></ion-icon>
+        Skill 
+      </button>
+      <button ion-item icon-left (click)="onLoad(createArtPage)" *ngIf="isAuthenticated">
+      <ion-icon name="book"></ion-icon>
+        Create Articles
+      </button>
+      <button ion-item icon-left (click)="onLogout()" *ngIf="isAuthenticated">
+        <ion-icon name="log-out"></ion-icon>
+        Log Out
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-nav [root]="rootPage" #nav></ion-nav>

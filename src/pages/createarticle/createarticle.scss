@@ -1,0 +1,62 @@
+page-createarticle {
+
+
+}
+
+ion-content {
+
+}
+
+.create {
+	color: #2ecc71;
+	margin-top: 15px;
+	margin-left: 16px;
+}
+
+h1 {
+	font-size: 40px;
+	font-weight: bolder;
+}
+
+.request {
+	text-align: right;
+	color: #2ecc71;
+	margin-top: 36px;
+	margin-right: 16px;
+}
+
+.crcontent {
+	/* background-image: url(../assets/imgs/gradientbg.png);
+	background-position: center;*/
+}
+
+
+p {
+	line-height: 20px;
+	font-size: 12px;
+	font-family: sans-serif;
+	letter-spacing: 0.2px;
+}
+
+#crbtn {
+	font-size: 16px;
+	padding: 14px;
+	width: 120px;
+	font-weight: bolder;
+	box-shadow: 0px 5px 16px 1px rgba(45, 52, 54, 0.15);
+	background: rgb(46, 204, 113);
+	color: white;
+}
+
+#reqbtn {
+	font-size: 16px;
+	padding: 14px;
+	width: 120px;
+	font-size: 16px;
+	font-weight: bolder;
+	box-shadow: 0px 5px 16px 1px rgba(45, 52, 54, 0.15);
+	background: rgb(46, 204, 113);
+	color: white;
+}
+
+
